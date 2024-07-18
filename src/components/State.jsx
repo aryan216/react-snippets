@@ -1,4 +1,4 @@
-import { RecoilRoot,useRecoilState, useRecoilValue } from "recoil";
+import { RecoilRoot,useSetRecoilState, useRecoilValue } from "recoil";
 import { countAtom } from "../Atoms/Numcount";
 
 export default function Count(){
@@ -6,6 +6,7 @@ export default function Count(){
     <div>
       <RecoilRoot>
         <Counter />
+        
       </RecoilRoot>
     </div>
   )
@@ -23,15 +24,16 @@ function Render(){
   return(
     <>
       {numcount}
+      
     </>
   );
 }
 function Buttons(){
-  const [numcount,setNumcount]=useRecoilState(countAtom);
+  const setNumcount=useSetRecoilState(countAtom);
   return(
     <div>
-      <button onClick={()=>{setNumcount(numcount+1)}}>plus</button>
-      <button onClick={()=>{setNumcount(numcount-1)}}>minus</button>
+      <button onClick={()=>{setNumcount(numcount=>numcount+1)}}>plus</button>
+      <button onClick={()=>{setNumcount(numcount=>numcount-1)}}>minus</button>
     </div>
   )
 
