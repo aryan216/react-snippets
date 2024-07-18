@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import React, { lazy,Suspense} from "react";
 const Dashboard = lazy(() => import("./components/Dashboard"));
 const Home = lazy(() => import("./components/Home"));
-import Count from "./components/Count";
+import State from "./components/State";
 
 function App2() {
   return (
@@ -30,7 +30,7 @@ function App2() {
       </BrowserRouter>
 
 
-      <Count/>
+      <State/>
     </div>
   );
 }
