@@ -1,4 +1,5 @@
 import {useState} from "react"
+import A1 from "./Assignment/A1"
 export default function App3(){
   const [title,setTitle]=useState("");
   const [description,setDescription]=useState("");
@@ -14,6 +15,7 @@ export default function App3(){
       <input type="text" placeholder="description" onChange={(e)=>{setDescription(e.target.value)}}/><br/>
       <button onClick={addTodo}>Add todo</button>
       {todos.map(todo=>(<Todos title={todo.title} description={todo.description} />))}
+      <A1/>
     </div>
   );
 }
